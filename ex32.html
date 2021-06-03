@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>연습문제</title>
+    <script>
+    //연습문제1
+    // 단일 for문으로 구구단 2단 출력하기
+    // 출력예) 2*1=2
+    //         2*2=4
+    var j=2;
+    for(i = 1; i<=9; i++){
+            console.log("2*"+i+"="+i*j);
+        }
+    //연습문제2
+    //2중 for문으로 구구단 2~9단 출력하기
+    for(i=1; i<=9; i++){
+        for(j=1; j<=9; j++){
+            console.log(i+"*"+j+"="+j*i);
+        }
+    }
+    //연습문제3
+    //n 정수(구구단 단수)를 하나 입력받고, 
+    //n단만 출력하시오.
+    var strnum = prompt("단수를 입력하세요.")
+    var num = Number(strnum);
+    for(i=1; i<=9; i++){
+        console.log(num+"*"+i+"="+num*i);
+    }
+    //연습문제4
+    //n, m을 입력받고, 해당하는 단수(n단부터 m단까지)만 출력하시오.
+    var strnum1 = prompt("시작할 단수를 입력하세요.");
+    var num1 = Number(strnum1);
+    var strnum2 = prompt("끝날 단수를 입력하세요.");
+    var num2 = Number(strnum2);
+
+    for(i=num1;i<=num2; i++){
+        for(j=1; j<=9;j++){
+            console.log(i+"*"+j+"="+i*j);
+        }
+    }
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

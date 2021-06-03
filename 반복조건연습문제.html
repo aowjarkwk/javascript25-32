@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>반복문과 조건문 연습문제</title>
+    <script>
+        //연습문제 1
+        //변수i가 1부터 20까지 1씩 증가하는 반복문에서
+        //조건문을 사용하여 i가 2의배수일때만 i를 출력하시오.
+        //예) 2,4,6...20
+        //for( 초기화; 조건; 증감 )
+        for (var i = 1; i <= 20; i++) {
+            if (i % 2 == 0) {
+                console.log(i);
+            }
+        }
+        //연습문제 2
+        //변수i가 1부터 10까지 1씩 증가하는 반복문에서
+        //i의 총합을 구하시오.(sum = 1+2+3+..10)
+        //총합 : 55
+        //힌트 : var sum = 0; 반복문위에
+        //       sum = sum + i; 반복문안에서
+        var sum = 0;
+        for (var i = 1; i <= 10; i++) {
+            sum = sum + i;
+        }
+        console.log(sum);
+        //연습문제 3
+        //변수i가 1부터 100까지 1씩 증가하는 반복문에서
+        //조건문을 사용하여 i가 3의 배수이면서 10의 배수인 i값을 출력하시오.
+        //함께 갯수도 출력하시오. (예: 30 60 이면 2개)
+        //출력결과: 30 60 90 갯수 3개
+        //힌트 : var count = 0; 반복문 위에
+        //       count = count + 1; 반복문(조건문) 안에서
+        var count = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 10 == 0) {
+                console.log(i);
+                count++; //count += 1;  count = count + 1;
+            }
+        }
+        console.log(count);
+        //연습문제 4
+        // 입력받은 n 정수의 팩토리얼을 구하시오. for문 사용.
+        // n은 5일때
+        // 5! = 5 * 4 * 3 * 2 * 1 = 120
+        // fact = fact * n;
+        var nStr = prompt("팩토리얼 n을 입력하세요");
+        var nNum = Number(nStr);
+        var fact = 1;
+        for (var i = nNum; i >= 1; i--) {
+            fact = fact * i;
+        }
+        console.log(fact);
+        //연습문제 5                          0부터 1사이의 랜덤한 실수
+        //랜덤값 구하는 함수 Math.random() : 0.0 ~ 0.999... 까지의 랜덤실수
+        //( Math.random() * ( 최대값 - 최소값 )  ) + 최소값
+        // 1부터 10까지의 랜덤 정수를 구하시오.
+        // 
+        console.log("random:" + (Math.floor(Math.random() * 9) + 1));
+        // 1~6의 수를 가진 주사위 2개의 값을 출력하고, 그 수들의 합을 출력하시오.
+        var randDice1 = Math.floor(Math.random() * 6) + 1;
+        var randDice2 = Math.floor(Math.random() * 6) + 1;
+        console.log("첫번째 주사위:" + randDice1);
+        console.log("두번째 주사위:" + randDice2);
+        console.log("주사위의 합:" + (randDice1 + randDice2));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

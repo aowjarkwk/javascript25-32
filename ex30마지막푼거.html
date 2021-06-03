@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>2중 for문과 치환</title>
+    <script>
+        // 2중 for문 : for문 안에 for문이 있는 것
+        for (var i = 0; i < 10; i++) {
+            // console.log( "i:" + i );
+            for (var j = 0; j < 10; j++) {
+                // console.log( "j:" + j );
+                console.log(i, j);
+            }
+        }
+        //2중 for문 : 2차배열, 치환-정렬 에서 사용
+        //연습문제
+        // i와 j를 이용하여, 2 3부터 5 8까지 출력하시오.
+        // i루프는 2~5순환하고, j루프는 3부터 8까지 순환
+        // 출력형태) console.log( i, j );
+        for (var i = 2; i < 6; i++) {
+            for (var j = 3; j < 9; j++) {
+                console.log(i, j);
+            }
+        }
+        //0 1 2
+        //2차원 배열    //Col 
+        var nums2D = [//1열 2열 3열
+            [10, 20, 30], //1행 Row 0
+            [40, 50, 60], //2행 Row 1
+            [70, 80, 90]  //3행 Row 2
+        ];
+        console.log(nums2D[0][0]);
+        console.log(nums2D[0][1]);
+        console.log(nums2D[0][2]);
+        console.log(nums2D[1][0]);
+        console.log(nums2D[1][1]);
+        console.log(nums2D[1][2]);
+        console.log(nums2D[2][0]);
+        console.log(nums2D[2][1]);
+        console.log(nums2D[2][2]);
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                console.log(i, j);
+                console.log(nums2D[i][j]);
+            }
+        }
+        //치환 Swap - 변수의 값을 서로 바꾼다.
+        var a = 10;
+        var b = 20;
+        var c = a; //c에 안전하게 보관
+        a = b;
+        b = c;
+        console.log("a:" + a);
+        console.log("b:" + b);
+        //치환을 이용한 정렬
+        var nums = [12, 34, 9, 25, 45];
+        //오름차순 정렬 : [9, 12, 25, 34, 45]  
+        //내림차순 정렬 : [45, 34, 25, 12, 9]
+        var temp = 0; //임시저장값
+        for (var i = 0; i < nums.length; i++) {
+            for (var j = i + 1; j < nums.length; j++) {
+                if (nums[i] > nums[j]) { //오름차순 정렬
+                    //치환
+                    temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                }
+            }
+        }
+        for (var num of nums) {
+            console.log(num);
+        }
+        //DM으로 제출
+        //연습문제
+        //사용자로부터 정수 5개를 입력받아
+        //그 중에서 가장 큰수와 2번째로 큰수, 가장 작은 수를 출력하고,
+        //내림차순으로 정렬된 결과를 출력하시오.
+        var inputNums = [0, 0, 0, 0, 0];
+        for (var i = 0; i < 5; i++) {
+            var str = prompt("정수입력:");
+            inputNums[i] = Number(str);
+        }
+        var temp = 0; //임시저장값
+        for (var i = 0; i < inputNums.length; i++) {
+            for (var j = i + 1; j < inputNums.length; j++) {
+                if (inputNums[i] < inputNums[j]) { //내림차순 정렬
+                    //치환
+                    temp = inputNums[i];
+                    inputNums[i] = inputNums[j];
+                    inputNums[j] = temp;
+                }
+            }
+        }
+        for (var num of inputNums) {
+            console.log(num);
+        }
+        console.log(inputNums[0]);
+        console.log(inputNums[1]);
+        console.log(inputNums[4]);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
